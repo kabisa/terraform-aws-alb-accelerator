@@ -92,6 +92,7 @@ resource "aws_globalaccelerator_endpoint_group" "http_alb" {
 
   endpoint_configuration {
     endpoint_id = aws_lb.this.arn
+    client_ip_preservation_enabled = true
     weight      = 100
   }
 }
@@ -101,6 +102,7 @@ resource "aws_globalaccelerator_endpoint_group" "https_alb" {
 
   endpoint_configuration {
     endpoint_id = aws_lb.this.arn
+    client_ip_preservation_enabled = true
     weight      = 100
   }
 }
